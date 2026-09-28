@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #f2eee4;
+  color: #29331f;
+}
+
+a {
+  color: inherit;
+}
+
+.link-underline {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  padding-bottom: 3px;
+  transition: background-size 0.4s ease;
+}
+.link-underline:hover {
+  background-size: 35% 1px;
+}
+
+.photo-zoom {
+  transition: transform 1.2s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.tile:hover .photo-zoom {
+  transform: scale(1.03);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .photo-zoom,
+  .link-underline {
+    transition: none !important;
+  }
+}
